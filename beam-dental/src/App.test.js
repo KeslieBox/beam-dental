@@ -18,6 +18,8 @@ import App from './App';
 
   // if endpoint fails, display error message: 'Error: Could not receive family preferences.'
 
+  // only one family per call
+
   // boxes should be grouped by matching color, ie 2 blue brushes grouped together with blue replacement head
     // they should not be grouped w/ other colors
 

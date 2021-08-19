@@ -1,9 +1,20 @@
+import StarterBoxes from "./components/starterBoxes";
+import {useState, useEffect} from 'react'
 
 function App() {
-  return (
-    <div className="App">
+  const [users, setUsers] = useState([])
 
-    </div>
+  useEffect(() => {
+    (async() => {
+      const resp = await fetch('https://beamtech.github.io/boxing-kata-js/perks.json')
+      const users = await (resp.json())
+      setUsers(users)
+    })()
+  }, [])
+
+  return (
+    <StarterBoxes />
+
   );
 }
 
