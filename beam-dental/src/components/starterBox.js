@@ -1,13 +1,13 @@
 import useStyles from '../styles/useStyles'
 
-function RefillBoxes (){
+function StarterBox (){
     const classes = useStyles()
 
     return (
         <button className={classes.tab} >
-            Refills
+            Starter Box
         </button>
     )
 }
 
-export default RefillBoxes
+export default StarterBox

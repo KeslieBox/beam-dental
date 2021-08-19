@@ -1,4 +1,4 @@
-import StarterBoxes from "./components/starterBoxes";
+import Tabs from "./components/Tabs";
 import {useState, useEffect} from 'react'
 
 function App() {
@@ -13,8 +13,9 @@ function App() {
   }, [])
 
   return (
-    <StarterBoxes />
-
+    <>
+      <Tabs />
+    </>
   );
 }
 
