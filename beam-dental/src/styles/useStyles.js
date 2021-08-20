@@ -17,13 +17,6 @@ const useStyles = createUseStyles({
       diplay: 'flex',
     },
   
-    // list item styling
-   li: {
-    fontSize: '18px',
-    cursor: 'pointer',
-    textDecoration: 'underline',
-    paddingRight: '50px',
-   }
   })
 
   export default useStyles

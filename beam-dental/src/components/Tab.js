@@ -1,13 +1,13 @@
 import useStyles from '../styles/useStyles'
 
-function RefillBoxes (){
+function Tab ({type, active, handleClick}){
     const classes = useStyles()
-
+    debugger
     return (
         <button className={classes.tab} >
-            Refill Boxes
+            {type}
         </button>
     )
 }
 
-export default RefillBoxes
+export default Tab
