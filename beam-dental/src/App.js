@@ -1,4 +1,4 @@
-import Tabs from "./components/Tabs";
+import TabsComponent from "./components/TabsComponent";
 import {useState, useEffect} from 'react'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <Tabs />
+      <TabsComponent />
     </>
   );
 }

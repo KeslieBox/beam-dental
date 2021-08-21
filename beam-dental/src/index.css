@@ -20,3 +20,32 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.container {
+  display: 'flex';
+}
+
+#tab {
+  font-size: '20px';
+  padding: '10px 60px';
+  cursor: 'pointer';
+  opacity: 0.6;
+  background: 'white';
+  border: 0;
+  outline: 0;
+  /* display: 'flex'; */
+}
+
+.Starter Box {    
+  /* // '& .active': { */
+    border-bottom: 2px solid blue;
+    opacity: 1;
+  /* // } */
+}
+
+.Refill Box {    
+  /* // '& .active': { */
+    border-bottom: 2px solid blue;
+    opacity: 1;
+  /* // } */
+}
