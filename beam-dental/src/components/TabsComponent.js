@@ -15,8 +15,8 @@ function TabsComponent (){
             <h1>Shipping</h1>
             <Tabs>
                 <TabList>
-                    <Tab>Starter Box</Tab>
-                    <Tab>Refill Box</Tab>
+                    <Tab>Starter Boxes</Tab>
+                    <Tab>Refill Boxes</Tab>
                 </TabList>
                     <TabPanel>
                         <div className="tab-content">

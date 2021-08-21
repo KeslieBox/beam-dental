@@ -72,8 +72,25 @@ p {
 
 #blue-card {
   background-color: rgb(243, 243, 245);
-  width: 400px;
-  height: 200px;
+  width: 330px;
+  height: 150px;
+  border-radius: 29px;
+}
+
+.circle {
+  display: block;
+  background: limegreen;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  position: absolute;
+}
+
+#dot-label {
+  margin: 0;
+  margin-left: 39px;
+  position: relative;
 }
 
 
