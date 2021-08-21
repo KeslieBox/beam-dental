@@ -11,22 +11,22 @@ function TabsComponent (){
 
     return (
         <div className='container'>
-            <div className="with-react-tabs">
-            <h1>With react-tabs</h1>
+            <div className="shipping">
+            <h1>Shipping</h1>
             <Tabs>
                 <TabList>
-                <Tab>Starter Box</Tab>
-                <Tab>Refill Box</Tab>
+                    <Tab>Starter Box</Tab>
+                    <Tab>Refill Box</Tab>
                 </TabList>
                     <TabPanel>
-                    <div className="tab-content">
-                        <StarterBox />
-                    </div>
+                        <div className="tab-content">
+                            <StarterBox />
+                        </div>
                     </TabPanel>
                     <TabPanel>
-                    <div className="tab-content">
-                        <RefillBox />
-                    </div>
+                        <div className="tab-content">
+                            <RefillBox />
+                        </div>
                     </TabPanel>
             </Tabs>
             </div>
