@@ -5,9 +5,10 @@ import StarterBox from './starterBox'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
-function TabsComponent (){
+function TabsComponent ({users, orders}){
     const classes = useStyles()
     const types = ['Starter Box', 'Refill Boxes']
+
 
     return (
         <div className='container'>
@@ -20,12 +21,12 @@ function TabsComponent (){
                 </TabList>
                     <TabPanel>
                         <div className="tab-content">
-                            <StarterBox />
+                            <StarterBox users={users} orders={orders}/>
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className="tab-content">
-                            <RefillBox />
+                            <RefillBox users={users} orders={orders}/>
                         </div>
                     </TabPanel>
             </Tabs>

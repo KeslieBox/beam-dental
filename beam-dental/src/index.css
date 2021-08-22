@@ -43,7 +43,7 @@ p {
 }
 
 .react-tabs__tab-list {
-  border-bottom: 2px solid #caa4a445 !important;
+  border-bottom: 2px solid #c7c7c745 !important;
   margin: 0 0 10px;
   padding: 0;
 }
@@ -63,8 +63,7 @@ p {
 
 .react-tabs__tab--selected {
   background: rgb(243, 243, 245) !important;
-  border-color: #aaa;
-  color: black;
+  border: 2px solid #c7c7c745 !important;
   border-radius: 0px 0px 0 0 !important;
   padding-left: 25px !important;
   padding-right: 25px !important;
@@ -77,10 +76,10 @@ p {
 .brush-cards {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
-  height: 570px;
-  max-width: calc(1060px);
+  height: auto;
+  max-width: calc(949px);
   @media (min-width: 576px) {
     width: 32rem;
   }
@@ -92,6 +91,7 @@ p {
   max-width: calc(350px);
   position: relative;
   margin-top: 3%;
+  margin-right: 28px;
   padding: 40px 20px 40px;
   @media (min-width: 576px) {
     width: 32rem;
@@ -125,7 +125,7 @@ p {
 
 .circle {
   display: block;
-  background: #01c4e9;
+  /* background: #01c4e9; */
   border-radius: 50%;
   height: 30px;
   width: 30px;
