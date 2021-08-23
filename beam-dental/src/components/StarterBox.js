@@ -1,8 +1,13 @@
-import useStyles from '../styles/useStyles'
-import {useState} from 'react'
 import StarterBoxCard from './StarterBoxCard.js'
 
-function StarterBox ({users, colorTotals, starterBoxes, totalBrushes}){
+function StarterBox ({colorTotals, starterBoxes, totalBrushes}){
+    // creates StarterBoxCard component for each brush color
+    const renderStarterBoxCardsByColor = Object.keys(colorTotals).map(color => { 
+        return (
+            <StarterBoxCard color={color} colorTotals={colorTotals}/>
+        )
+    })
+
     return (
         <>
         <h2>Summary: </h2>
@@ -10,15 +15,8 @@ function StarterBox ({users, colorTotals, starterBoxes, totalBrushes}){
         <p>Brushes: {totalBrushes} </p>
         <p>Replacement Heads: {totalBrushes} </p>
         <div className='brush-cards'>
-            {/* iterate through each color and return order card component */}
-            {Object.keys(colorTotals).map(color => {
-                // return div dedicated to current color and the number of brushes
-                return (
-                    // orders[color] return the number of brushes
-                    <StarterBoxCard color={color} quantity={colorTotals[color]}/>
-                )
-            })} 
-            
+            {/* iterates through each color and returns StarterBoxCard component */}
+            {renderStarterBoxCardsByColor}    
         </div>
         </>
     )

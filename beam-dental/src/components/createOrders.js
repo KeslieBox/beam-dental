@@ -1,6 +1,6 @@
 
 
-    
+    // do I want to separate this out??
 
     export const createOrders = (users) => {
         let orders, totalBrushes, starterBoxes, refillBoxes
