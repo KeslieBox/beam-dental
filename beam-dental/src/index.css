@@ -123,15 +123,37 @@ p {
   }
 }
 
-.circle {
+.blue-circle {
   display: block;
-  /* background: #01c4e9; */
+  background-color: #01c4e9;
   border-radius: 50%;
   height: 30px;
   width: 30px;
   margin: 0;
   position: absolute;
 }
+
+.green-circle {
+  display: block;
+  background-color: #e0e900;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  position: absolute;
+}
+
+.pink-circle {
+  display: block;
+  background-color: #e92fac;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0;
+  position: absolute;
+}
+
+/* .circle */
 
 #dot-label {
   margin: 0;

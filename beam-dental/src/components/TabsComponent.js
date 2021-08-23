@@ -1,11 +1,10 @@
-import useStyles from '../styles/useStyles'
-import {useState, useEffect} from 'react'
 import RefillBox from './refillBox'
-import StarterBox from './starterBox'
+import StarterBox from './StarterBox'
+import StarterBox2 from './StarterBox2'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
-function TabsComponent ({users, orders, starterBoxes, refillBoxes, totalBrushes}){
+function TabsComponent ({colorTotals, starterBoxes, refillBoxes, totalBrushes}){
     
     return (
         <div className='container'>
@@ -19,12 +18,12 @@ function TabsComponent ({users, orders, starterBoxes, refillBoxes, totalBrushes}
                     <TabPanel>
                         <div className="tab-content">
                             {/* need to reconfigure to avoid prop drilling */}
-                            <StarterBox users={users} orders={orders} starterBoxes={starterBoxes} refillBoxes={refillBoxes} totalBrushes={totalBrushes}/>
+                            <StarterBox2 colorTotals={colorTotals} starterBoxes={starterBoxes} refillBoxes={refillBoxes} totalBrushes={totalBrushes}/>
                         </div>
                     </TabPanel>
                     <TabPanel>
                         <div className="tab-content">
-                            <RefillBox users={users} orders={orders}/>
+                            <RefillBox colorTotals={colorTotals}/>
                         </div>
                     </TabPanel>
             </Tabs>

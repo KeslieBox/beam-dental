@@ -1,6 +1,6 @@
 import useStyles from '../styles/useStyles'
 
-function RefillBox ({users, orders}){
+function RefillBox ({orders}){
     const classes = useStyles()
 
     return (
