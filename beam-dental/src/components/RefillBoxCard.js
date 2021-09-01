@@ -6,15 +6,20 @@ function RefillBoxCard({color, colorTotals}){
     // the amount of boxes needed, ie 5 blue/ 2 replacement heads per box rounds to 3 
     let numberOfBoxes = Math.ceil(colorTotals[color]/2)
     // creates an array with an element for each number in range 0..numberOfBoxes
-    let count = new Array(numberOfBoxes).fill(true).map((e, i) => i+1)
+    let arrOfBoxes = new Array(numberOfBoxes).fill(true).map((e, i) => i+1)
     let currentColorTotal = colorTotals[color]
 
-    const refillBoxDivs = count.map(index => {
+    const refillBoxDivs = arrOfBoxes.map(currentBox => {
+        // each iteration where currentColorTotal is greater than two, display a new div 
+        // subtracting two from the total and displaying as that div's quantity
         let quantity = currentColorTotal > 1 ? 2 : 1
         let suffixReplacementHead = quantity > 1 ? 's' : ''
+        // removing two from total each time and displaying in a card div
         currentColorTotal -= 2
         return (
             <div id={`${color}-card`}>
+                {/* loop through each count of 4 and display a span like below */}
+                {}
                 <span>
                     <figure className={`${color}-circle`}></figure>  
                     <p id='dot-label'>{quantity} replacement head{suffixReplacementHead}</p>

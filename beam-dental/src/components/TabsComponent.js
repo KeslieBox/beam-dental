@@ -1,10 +1,10 @@
-import RefillBox from './RefillBox'
+import RefillBox from './RefillBox4'
 import StarterBox from './StarterBox'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
 function TabsComponent ({colorTotals, starterBoxes, refillBoxes, totalBrushes}){
-    
+   
     return (
         <div className='container'>
             <div className="shipping">

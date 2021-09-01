@@ -2,7 +2,7 @@ import TabsComponent from "./components/TabsComponent";
 import {useState, useEffect} from 'react'
 
 function App() {
-  const [users, setUsers] = useState([])
+  const [_, setUsers] = useState([])
   const [totals, setTotals] = useState({
     colorTotals: 0,
     starterBoxes: 0,
@@ -11,19 +11,16 @@ function App() {
  });
 
   const createOrders = (users) => {
-    let colorTotals, totalBrushes, starterBoxesNeeded, refillBoxesNeeded
-    let [blueBrushes, greenBrushes, pinkBrushes, ] = [0, 0, 0]
+    let starterBoxesNeeded, refillBoxesNeeded
+    const colorTotals = {}
+    let totalBrushes = 0
     
     // totals up each color
-    users.map(user => {
-        if (user.brush_color === "green") greenBrushes++
-        if (user.brush_color === "pink") pinkBrushes++
-        if (user.brush_color === "blue") blueBrushes++
+    users.forEach(user => {
+      colorTotals[user.brush_color] ? colorTotals[user.brush_color] += 1 : colorTotals[user.brush_color] = 1
+      totalBrushes += 1
     })
-    
-    // is it too redundant to separate these out like this??
-    colorTotals = {blue: blueBrushes, green: greenBrushes, pink: pinkBrushes} 
-    totalBrushes = blueBrushes + greenBrushes + pinkBrushes
+         
     starterBoxesNeeded = Math.ceil((totalBrushes) / 2)
     refillBoxesNeeded = Math.ceil(totalBrushes / 4)
     
