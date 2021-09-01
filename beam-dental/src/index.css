@@ -87,8 +87,9 @@ p {
 
 #card {
   background-color: rgb(243, 243, 245);
-  border-radius: 29px;
+  border-radius: 22px;
   max-width: calc(350px);
+  height: 160px;
   position: relative;
   margin-top: 3%;
   margin-right: 28px;

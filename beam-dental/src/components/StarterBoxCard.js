@@ -14,7 +14,7 @@ export default function StarterBoxCard({color, colorTotals}){
         let suffixReplacementHead = quantity > 1 ? 's' : ''
         currentColorTotal -= 2
         return (
-            <div id={`${color}-card`}>
+            <div id={`card`}>
                 <span>
                     <figure className={`${color}-circle`}></figure> 
                     <p id='dot-label'>{quantity} brush{suffixBrush}</p>
