@@ -1,5 +1,4 @@
 
-
 export default function StarterBoxCard({color, colorTotals}){
     // divides current color total by two and rounds up to determine 
     // the amount of boxes needed, ie 5 blue/ 2 brushes per box rounds to 3 

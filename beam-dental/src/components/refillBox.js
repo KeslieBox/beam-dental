@@ -9,6 +9,7 @@ function RefillBox ({colorTotals, refillBoxes, totalRefills}){
         let spacesLeftInDiv = 4
         let divTotal = 0
         
+        // would really like to clean this up more, but for now it is working 
         colorsArray.forEach(([color, amount], i) => {              
             // represents the current quantity being used to build each div, equal to either the current 
             // amount left of the color or the maximum box/div total of 4 if amount remaining is greater than 4
@@ -73,12 +74,7 @@ function RefillBox ({colorTotals, refillBoxes, totalRefills}){
                         {Object.entries(div).map(([color,amount]) => {
                             let suffix = amount > 1 ? 's' : ''
                             return (
-                                <>
-                                    <span>
-                                        <figure className='circle' id={`${color}-circle`}></figure>  
-                                        <p id='dot-label'>{amount} replacement head{suffix}</p><br></br>
-                                    </span><br></br>
-                                </>
+                                <RefillBoxCard color={color} amount={amount} suffix={suffix}/>
                             )
                         })}
                     </div>

@@ -1,21 +1,23 @@
-// import {screen } from '@testing-library/react';
-import App from './App';
-
-// test('renders hello', () => {
-//   render(<App />);
-//   const text = screen.getByText(/hello/);
-//   expect(text).toBeInTheDocument();
-// });
-
-
 import React from "react";
-import { render, screen, unmountComponentAtNode } from "react-dom";
+import {unmountComponentAtNode, render as renderDom } from "react-dom";
+import { render as render, screen } from "@testing-library/react";
 import { act } from "react-dom/test-utils";
+import App from './App';
+import { expect } from "@jest/globals";
 
+// This is too much for me to figure out in a timely fashion for this particular kata, 
+// but I am actively learning how to implement TDD, so I thought I would show my thought process a bit here.
+// I am quite unfamiliar with JS testing unfortunately
 
-// create some fake cases
-// if i have an input with one user does it populate correctly, multiple users?, no users?
-// for app component, what happens with dif data being passed in
+test('renders summary on page load', () => {
+  render(<App />);
+  const text = screen.getByText(/Summary/);
+  expect(text).toBeInTheDocument();
+});
+
+// would like to make this a more accurate mock fetch request, 
+// but I'm not familiar with this specific type of test
+// I think it could go something like this:
 let container = null;
 beforeEach(() => {
   // setup a DOM element as a render target
@@ -31,6 +33,8 @@ afterEach(() => {
 });
 
 it("renders user data on successful fetch", async () => {
+  // this is not really doing much right now, but I would like to use this data
+  // to test the fetch request:
   const fakeUser = {
     "id": 2,
     "name": "Anakin",
@@ -46,19 +50,20 @@ it("renders user data on successful fetch", async () => {
 
   // Use the asynchronous version of act to apply resolved promises
   await act(async () => {
-    render(<App/>, container);
+    renderDom(<App/>, container);
   });
 
-  // expect(container.querySelector("summary").textContent).toBe(fakeUser.name);
-  expect(container.querySelector('#starter').textContent).toEqual('Starter Boxes: 3');
-  // expect(container.textContent).toContain(fakeUser.address);
+  // need to figure out how to test the results of the fetch after I have manipulated the data
+  // as well as how to navigate the asynchronous nature of the Promise to test the actual total of Starter Boxes 
+  expect(container.querySelector('#starter').textContent).toEqual('Starter Boxes: 0');
+  // if I was displaying the raw data of the Promise object, I would test it somewhat like this:
+  // expect(container.querySelector('#brush-color').textContent).toEqual(fakeUser.brush_color);
 
   // remove the mock to ensure tests are completely isolated
-  global.fetch.mockRestore();
+  global.fetch.mockRestore(); 
 });
 
-
-// Tests to write:
+// These are the tests I would have liked to write:
   // upon entering shipping screen, starting box summary displayed
 
   // shipping screen has two tabs on it: 
