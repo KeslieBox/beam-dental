@@ -1,12 +1,13 @@
-import RefillBox from './RefillBox4'
-import StarterBox from './StarterBox'
+import RefillBox from './refillBox'
+import StarterBox from './starterBox'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
-function TabsComponent ({colorTotals, starterBoxes, refillBoxes, totalBrushes}){
+function TabsComponent ({colorTotals, starterBoxes, refillBoxes, totalBrushes, hasError}){
    
     return (
         <div className='container'>
+            {hasError && <h1>Error: Could not receive family preferences. </h1>}
             <div className="shipping">
             <h1>Shipping</h1>
             <Tabs>
@@ -25,7 +26,7 @@ function TabsComponent ({colorTotals, starterBoxes, refillBoxes, totalBrushes}){
                         </div>
                     </TabPanel>
             </Tabs>
-            </div>
+            </div> 
         </div>
     )
 }

@@ -16,13 +16,13 @@ export default function StarterBoxCard({color, colorTotals}){
         return (
             <div id={`card`}>
                 <span>
-                    <figure className={`${color}-circle`}></figure> 
+                    <figure className='circle' id={`${color}-circle`}></figure> 
                     <p id='dot-label'>{quantity} brush{suffixBrush}</p>
                 </span> 
                 <br></br>
                 <br></br>
                 <span>
-                    <figure className={`${color}-circle`}></figure>  
+                    <figure className='circle' id={`${color}-circle`}></figure>  
                     <p id='dot-label'>{quantity} replacement head{suffixReplacementHead}</p>
                 </span> 
             </div>

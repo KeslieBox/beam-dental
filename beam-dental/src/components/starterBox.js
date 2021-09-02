@@ -1,4 +1,4 @@
-import StarterBoxCard from './StarterBoxCard.js'
+import StarterBoxCard from './starterBoxCard.js'
 
 function StarterBox ({colorTotals, starterBoxes, totalBrushes}){
     // creates StarterBoxCard component for each brush color

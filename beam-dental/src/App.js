@@ -1,4 +1,5 @@
-import TabsComponent from "./components/TabsComponent";
+import TabsComponent from "./components/tabsComponent";
+import ErrorComponent from "./components/errorHandling/errorComponent";
 import {useState, useEffect} from 'react'
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     starterBoxes: 0,
     refillBoxes: 0,
     totalBrushes: 0
- });
+ })
+ const [hasError, setHasError] = useState(false)
 
   const createOrders = (users) => {
     let starterBoxesNeeded, refillBoxesNeeded
@@ -35,12 +37,12 @@ function App() {
   useEffect(() => {
     (async() => {
       try {
-        const resp = await fetch('https://beamtech.github.io/boxing-kata-js/perks.json')
+        const resp = await fetch('https://beamtech.github.io/boxing-kata-js/perks.jso')
         const users = await (resp.json())
         setUsers(users)
         createOrders(users)
       } catch (err){
-        throw new Error('Error: Could not receive family preferences.')
+        setHasError(true)
       }
     })()
   }, [])
@@ -52,6 +54,7 @@ function App() {
         starterBoxes={totals.starterBoxes} 
         refillBoxes={totals.refillBoxes} 
         totalBrushes={totals.totalBrushes}
+        hasError={hasError}
       />
     </>
   );
